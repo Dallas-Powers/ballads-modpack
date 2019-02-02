@@ -1,0 +1,746 @@
+Ballads Modpack 1.0.1 to Ballads Modpack 1.0.2
+
+Updated:
+	Better Builder's Wands (went from Better Builder's Wands 0.12.0 [MC1.12; rev 251] to Better Builder's Wands 0.12.1 [MC1.12; rev 254]):
+		Better Builder's Wands 0.12.1 [MC1.12; rev 254]:
+			Update to newer forge. Hopefully this version fixes at least more bugs than it creates.
+			Fixes
+			* Wands should have proper info text.
+			* Wand upgrade recipes should work better.
+
+	Bookshelf (went from Bookshelf-1.12.2-2.3.569.jar to Bookshelf-1.12.2-2.3.574.jar):
+		Bookshelf-1.12.2-2.3.574.jar:
+			 * Added some methods to help access and check container listeners. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * NillerMedDild
+			 * Jonathan McManus
+			 * Tristan McMahon
+			 * Pongo Sapiens
+			 * Darkosto
+		Bookshelf-1.12.2-2.3.573.jar:
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * NillerMedDild
+			 * Jonathan McManus
+			 * Tristan McMahon
+			 * Darkosto
+		Bookshelf-1.12.2-2.3.572.jar:
+			 * Added some additional hooks to the explosion class. - Tyler Hancock
+			 * Added additional ATs for explosions. - Tyler Hancock
+			 * Removed unused assets. - Tyler Hancock
+			 * Fixed line endings. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * NillerMedDild
+			 * Tristan McMahon
+			 * Darkosto
+		Bookshelf-1.12.2-2.3.571.jar:
+			 * Added a method to grab a player texture. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * NillerMedDild
+			 * Tristan McMahon
+			 * Darkosto
+		Bookshelf-1.12.2-2.3.570.jar:
+			 * Moved to new build secrets system. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?Bookshelf)
+
+			 * Niels Pilgaard Gr�ndahl
+			 * yaibatoken
+			 * Darkosto
+
+	Buildcraft (went from BuildCraft 7.99.19 to buildcraft-all-7.99.21.jar):
+		buildcraft-all-7.99.21.jar:
+			Improvements:
+
+			 *  [#4315] Allow the oil dimension and biome exclusion lists to be treated as whitelists instead.
+			 * Toggle either "worldgen.oil.excludedBiomesIsBlacklist" or "worldgen.oil.excludedDimensionsIsBlacklist" in order to change this.
+			 * Fix a few performance issues with all ticking buildcraft tiles and a few more engine specific issues.
+			 * Fix a few performance issues with the fluid pipes.
+			 * Add an advancement to unlock the list recipe when you have 7 or more items in a single diamond pipe filter.
+			 * Enabled several display config options by default: useBucketsStatic, useBucketsFlow, useLongLocalizedName, and changed timeGap to "seconds" rather than "ticks".
+			Bug fixes:
+
+			 * [#4297] Fixed the quarry ignoring the maximum build height when it is placed too high up.
+			 * [#4317] Fix a crash with little tiles because AlexIIL didn't implement a reflection getter correctly.
+			 * Fix silicon having an accidental dependency on transport. Again.
+			 * Fix fluid pipes not saving the current flow direction.
+			 * Fix all API names having uppercase characters. The old scheme was "BuildCraftAPI|<module>", and the new scheme is "buildcraftapi_<module>".
+			 * Theoretically fix the tank and pipe fluid renderer not always getting the fluid texture correctly.
+		buildcraft-all-7.99.20.jar:
+			Breaking changes:
+
+			 * The flood gate no longer uses the open sides to determine the sides to fill out in-world. (AlexIIL)
+			Additions:
+
+			 *  Re-added JSON-based assembly recipes, and made them load from "/config/buildcraft/assemblyrecipespre_mj" folder. (AlexIIL)
+			 * Currently they will crash the game if any errors are detected in any of the json files - although it will print out every error before crashing.
+			 * The "pre_mj" bit is important - these assembly recipe formats will change in the future MJ update, so please don't create a lot of them or you will just have to rewrite them in the future.
+			 * Integration table recipes haven't been re-added though.
+			 *  Added a config option for tweaking the maximum depth that the mining well, quarry, and pump can extend their tubes. (AlexIIL)
+			 * This is called "general.miningMaxDepth" and can be changed from anywhere between 32 and 4096.
+			 * (Values above 256 make no difference in vanilla, this is primarily for Cubic Chunk support)
+			 *  Added the command "/buildcraft reload" which reloads all buildcraft data registries. (AlexIIL)
+			 * In 1.13 this will be merged into the vanilla minecraft "/reload" command.
+			 * This currently doesn't reload client-side registries, although you can still reload the guide page registry by using F3+T while in the guide GUI.
+			 * Added an advancement for the guide book recipe.
+			Improvements:
+
+			 *  [meta] BuildCraftCompat is now included in an "all" jar file (named "buildcraft-all-7.99.20.jar").
+			 * The previous "buildcraft-7.99.19" jar file has been renamed "buildcraft-main-7.99.20.jar"
+			 * As such the compat module will have the same version number as the rest of buildcraft
+			 * In addition it no longer has a separate changelog.
+			 *  Many improvements to the guide book:
+			 * The open book now shows more visibly if you are on the first or last page in the current chapter.
+			 * Made the next page and previous page buttons have a much bigger clickable area.
+			 * Added a second guide book for configuration information. It doesn't have a recipe because it isn't useful in the game
+			 * This implies that you can add your own additional guide books, although there's not much point in doing so because addons should continue to use the main book "buildcraftcore:main"
+			 * Alternative guide books can be created by running /give @a buildcraftlib:guide 1 0 {BookName: "domain:path"}
+			 * Added groups: related entries. Currently these can only be specified through code.
+			 * Auto-add a chapter with the name of the page entry at the very start (so that we don't need to do this manually)
+			 * Auto-add the relevant groups and recipes to the end of every page entry. Recipes won't be auto-added if they have been manually specified earlier in the entry.
+			 * The page title has been changed to brown rather than black, so that it stands out less than the actual text.
+			Ported content:
+
+			 * [#4299] Re-added the power requested trigger (therealfarfetchd)
+			Bug fixes:
+
+			 * Fix the quarry, pump, and mining well not digging below Y=0 when cubic chunks is installed. (AlexIIL)
+			 * Slightly fix the quarry being slower than it should be - it's now a tiny bit faster than it used to be. (AlexIIL)
+			 * Fixed the pump and flood gate not working correctly with gaseous fluids. (AlexIIL)
+			 * [#4044] Vanilla flowing water blocks are invisible with BC installed (AlexIIL)
+			 * [#4296] The marker connector recipe requires buildcraft wooden gears rather than any item that has an ore-dictionary name of "gearWood" (AlexIIL)
+			 * [#4300] The obsidian pipe doesn't instantly pull in the entire stack of item entities that collide with it. (AlexIIL)
+			 * [#4305] Crash when rendering inside an enderIO gui. (AlexIIL)
+
+	CoroUtil (went from coroutil-1.12.1-1.2.14.jar to coroutil-1.12.1-1.2.26.jar):
+		coroutil-1.12.1-1.2.26.jar:
+			- Stop counting up player time for invasions of player in spectator or creative mode
+		coroutil-1.12.1-1.2.25.jar:
+			- More debug for dps calculations
+			- Slight performance boost on world load
+		coroutil-1.12.1-1.2.24.jar:
+			- Fix not copying important data on player death, resulting in invasions happening less often etc.
+		coroutil-1.12.1-1.2.23.jar:
+			- Improve long distance pathing performance, preventing overuse, staggering entities so they dont all try at once
+			- Zombie miners will leap higher out of water to avoid getting stuck
+		coroutil-1.12.1-1.2.22.jar:
+			- Fix performance design flaw in BlockDataPoint causing every point to load their chunk on game startup. Should greatly reduce server start time on long running servers using desirepaths or hw-invasions
+		coroutil-1.12.1-1.2.21.jar:
+			- FTBU claimed chunk compatibility, repairing blocks will only be used during explosions if chunk isnt claimed and protected
+		coroutil-1.12.1-1.2.20.jar:
+			- Silence some harmless config mod exceptions printed to console
+			- HW-Invasion based updates
+		coroutil-1.12.1-1.2.19.jar:
+			- HW-Invasions based changes
+		coroutil-1.12.1-1.2.18.jar:
+			- Fix dps calculator not filtering out differing damage sources and resetting
+			- More configs to filter damage types, sources and rates
+		coroutil-1.12.1-1.2.17.jar:
+			- Fix dedicated server crash for removeAllModifiers
+		coroutil-1.12.1-1.2.15.jar:
+			[https://coros.us/mods/coroutil?fileinfo-48](https://minecraft.curseforge.com/linkout?remoteUrl=https%253a%252f%252fcoros.us%252fmods%252fcoroutil%253ffileinfo-48)
+
+	CraftTweaker (went from CraftTweaker2-1.12-4.1.13 to CraftTweaker2-1.12-4.1.14):
+		CraftTweaker2-1.12-4.1.14:
+			Fix lang files over reloading.
+
+			Fixed url opening on linux
+
+			Fix recipe actions applying on other recipes
+
+			move to a MIT license!
+
+			fixed null in arrays
+
+			more zengetters on iingredient
+
+			fixed possible NPE
+
+			Added a way to convert from ILiquidstack to WeightedLiquidstack
+
+			MCItemStack#getLiquids not checks liquids in an itemstack
+
+			added ItemUtils#getItem
+
+			Fix null stacks in regex stack getting
+
+			dumpzs uses targets, removed exportzs
+
+			updated command links
+
+			fixed seed weights
+
+			fixed stack matching on IngredientStack
+
+			made import errors more descriptive
+
+			ctsyntax shows errors on a single line
+
+			added burntime and enchantability to /ct names
+
+			Fixed up CraftTweakerMC for getting itemstacks from lists
+
+			Added food methods to IItemStack
+
+			added /ct foods
+
+			If you want to see more releases with cool new features like this one, consider supporting me on my Patreon:
+
+			[https://www.patreon.com/jaredlll08](https://www.patreon.com/jaredlll08?CT14)
+
+	Dark Utilities (went from DarkUtils-1.12.2-1.8.219.jar to DarkUtils-1.12.2-1.8.223.jar):
+		DarkUtils-1.12.2-1.8.223.jar:
+			 * Updated minimum version of Dark Utilities required. - Tyler Hancock
+			 * Fixed Fake TNT killing mobs. Sorry Vintschente's friend. #171 - Tyler Hancock
+			 * Switched from JitPack to MMD's Maven for Baubles. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtils)
+
+			 * NillerMedDild
+			 * Jonathan McManus
+			 * Tristan McMahon
+			 * Darkosto
+		DarkUtils-1.12.2-1.8.222.jar:
+			 * Fix Focus Sash calculation (#169) Closes #168 - Sewef
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtils)
+
+			 * NillerMedDild
+			 * yaibatoken
+			 * Darkosto
+		DarkUtils-1.12.2-1.8.221.jar:
+			 * Fixed gluttony charm not allowing some modded items to be eaten. - Sewef
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtils)
+
+			 * NillerMedDild
+			 * yaibatoken
+			 * Darkosto
+		DarkUtils-1.12.2-1.8.220.jar:
+			 * Moved to new gradle build secrets system, and added thanks to patreons in changelog. - Tyler Hancock
+			Huge thanks to my supporters on [Patreon](https://www.patreon.com/Darkhax?MCChangelog?DarkUtils)
+
+			 * Niels Pilgaard Gr�ndahl
+			 * yaibatoken
+			 * Darkosto
+
+	Ender IO (went from Ender IO - 5.0.39 to Ender IO - 5.0.40):
+		Ender IO - 5.0.40:
+			You need either the main file or a selection of the "split" jars, not both!
+
+			Added names for Endergy fluids
+			Reworked Dark Steel Upgrade JEI recipes to be dynamic, remove enchantment recipes
+			Fixed Endergy depending on Machines
+			Fixed TelePad target check running on bad data
+			Added Enchantment Filter
+			Fixed enhanced machine animations
+			Made Enderman skull wearable
+			Added TOP integration for DimTrans
+			Fixed ConduitProbeData for Solar Panels
+			Fixed skeletal contractor having a pixel error in the upper right corner
+			Fixed Direct upgrade
+			Fixed Slice'n'Splice configuration
+			Added melee weapon support for direct upgrade
+			Fixed Crafter considering power optional
+			Made reinforced obsidian paintable
+			Added proper pickBlock support for all paintable blocks
+			Fixed example recipe syntax
+			Fixed facade lighting running on the wrong blockstate
+			Added more documentation to the XSD
+			Added Infinity Dust Block
+
+			[Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f40%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
+
+	Ender IO Endergy (went from Ender IO endergy - 5.0.39 to Ender IO endergy - 5.0.40):
+		Ender IO endergy - 5.0.40:
+			 You need either the main file or a selection of the "split" jars, not both! [Changelog (this build)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252f40%252fchanges) / [Changelog (all builds)](https://minecraft.curseforge.com/linkout?remoteUrl=http%253a%252f%252fci.tterrag.com%252fjob%252fEnderIO-Modules%252fjob%252fEnderIO-Combined%252fchanges)
+
+	EnderCore (went from EnderCore - 1.12.2-0.5.43 to EnderCore - 1.12.2-0.5.45):
+		EnderCore - 1.12.2-0.5.45:
+			EnderCore 1.12.2-0.5.45
+		EnderCore - 1.12.2-0.5.44:
+			EnderCore 1.12.2-0.5.44
+
+	EnderTanks (went from endertanks-1.12.0-1.6.6.jar to endertanks-1.12.0-1.6.8.jar):
+		endertanks-1.12.0-1.6.8.jar:
+			Fixed an error in my compactor update code that allowed it to sometimes run in a non thread safe manner.
+
+			This would cause seemingly random mod issues, without any useful troubleshooting information.
+
+			For example the 'Thermal Expansion Arcane Ensorcellator' became unusable as none of its output recipes load
+		endertanks-1.12.0-1.6.7.jar:
+			- Added Comparator support
+
+			NOTE: Requires ShetiPhianCore v3.5.9+
+
+	Environmental Materials (went from environmentalmaterials-1.12.2-1.0.18.1.jar to environmentalmaterials-1.12.2-1.0.19.1.jar):
+		environmentalmaterials-1.12.2-1.0.19.1.jar:
+			No changelog provided.
+
+	Environmental Tech (went from environmentaltech-1.12.2-2.0.18.2.jar to environmentaltech-1.12.2-2.0.19.1.jar):
+		environmentaltech-1.12.2-2.0.19.1.jar:
+			No changelog provided.
+
+	FTB Library (went from FTBLib-5.4.0.73.jar to FTBLib-5.4.1.80.jar):
+		FTBLib-5.4.1.80.jar:
+			 * Files are now deleted safely - LatvianModder
+		FTBLib-5.4.1.79.jar:
+			 * Added FileUtils.deleteSafe(), ConfigDouble.SimpleDouble - LatvianModder
+		FTBLib-5.4.1.78.jar:
+			 * Fixed double-status messages - LatvianModder
+		FTBLib-5.4.1.77.jar:
+			 * Updated minimum required forge version to 14.23.5.2784 - LatvianModder
+		FTBLib-5.4.1.76.jar:
+			 * Removed useless client classes from lib - ModelBase, ModelBuilder, SpriteSet, removed ClientUtils.MC - LatvianModder
+			 * Removed atlas sprite cache - LatvianModder
+		FTBLib-5.4.1.75.jar:
+			 * Changed mod_name back to FTBLib in buildscript - LatvianModder
+
+	FTB Utilities (went from FTBUtilities-5.3.0.68.jar to FTBUtilities-5.3.0.79.jar):
+		FTBUtilities-5.3.0.79.jar:
+			 * Moved player events to FTBUtilitiesPlayerEventHandler - LatvianModder
+			 * Added #439 and #928 - LatvianModder
+		FTBUtilities-5.3.0.78.jar:
+			 * Removed unused warps gui - LatvianModder
+		FTBUtilities-5.3.0.77.jar:
+			 * Files are now deleted safely - LatvianModder
+		FTBUtilities-5.3.0.76.jar:
+			No changelog provided.
+		FTBUtilities-5.3.0.75.jar:
+			 * Trim backup folder path - LatvianModder
+		FTBUtilities-5.3.0.74.jar:
+			 * Added list in config to disable item right-clicking - LatvianModder
+		FTBUtilities-5.3.0.73.jar:
+			 * Moved Leaderboards registry event to INIT - LatvianModder
+			 * Made dependencies non-transitive - LatvianModder
+			 * Removed useless client classes from lib - ModelBase, ModelBuilder, SpriteSet, removed ClientUtils.MC - LatvianModder
+		FTBUtilities-5.3.0.72.jar:
+			 * Cleanup of #917 - LatvianModder
+			 * Merge pull request #917 from xoption/master - Kristi?ns Mic?tis
+			 * add God command - Matt Bennett
+			 * add god command - Matt Bennett
+		FTBUtilities-5.3.0.71.jar:
+			No changelog provided.
+		FTBUtilities-5.3.0.69.jar:
+			 * Merge pull request #907 from Lucraft/master - Kristi?ns Mic?tis
+			 * Added ChunkModifiedEvent.Claim event to allow cancelling of claiming chunks - Lucraft
+
+	Just Enough Items (JEI) (went from jei_1.12.2-4.14.3.242.jar to jei_1.12.2-4.14.4.264.jar):
+		4.14.4:
+			* Reduce memory used by anvil recipe wrappers
+			* Fix #1473 Avoid posting texture stitching events from JeiTextureMap
+			* Fix #1471 Remove texture pack sizing restrictions
+			* Fix #1472 Crash when using recipe transfer into astral sorcery table
+			* Fix #1464 Recipe transfer into Artisan Worktables voids items (#1466)
+			* Update pt_br.lang (#1469)
+			* Automatic code style reformatting
+			* Revert "Pass a null player to getTooltip (#1388)" This reverts commit e20c3a588c20e41b44794b1909b11c7c840a497b.
+			* Simplify texture scaling
+			* Show multiple columns of recipe catalysts when there are too many for one column
+			* Fix #1463 Improve custom texture map to work with scaled resource packs
+			* Move bookmarks out of the way of the recipe book
+			* Fix #1412 Shift-clicking recipe into a Slice'N'Splice can void items
+			* Update de_de.lang (#1461)
+			* Update ja_jp.lang (#1458)
+			* Fix recipe transfer button transparency
+			* Convert texture atlas to a dynamic texture map with separate images
+			* Improve bookmark icon (thanks @Gokuchan)
+			* Fix #1452 stop deletion of items in cheat mode from closed bookmarks list
+			* Updated Polish translation (#1449)
+			* Update zh_cn.lang (#1447)
+			* Update zh_tw.lang (#1445)
+			* Improve performance of "Indexing ingredients" progress bar
+			* Move bookmarks out of the way of potion effects in the inventory
+			* Fix bookmarks opening when there are none to show
+			* Update sv_se.lang (#1441)
+			* Update de_de.lang (#1443)
+			* Minor improvement for Brazilian Portuguese localization (#1440)
+			* Improve English localization (#1434)
+			* Improve German translation (#1438)
+			* Update fr_fr.lang (#1433)
+
+	McJtyLib (went from McJtyLib - 1.12-3.0.7 to McJtyLib - 1.12-3.1.1):
+		McJtyLib - 1.12-3.1.1:
+			 - Fixed a client-side dependency problem
+		McJtyLib - 1.12-3.1.0:
+			 - Joseph fixed tooltips sometimes rendering partially offscreen.
+			 - Removal of COFH RF API support. Only Forge Energy is supported now!
+			 - New helper classes for cleaner proxy support in mods using McJtyLib
+
+	Mob Grinding Utils (went from MobGrindingUtils-0.3.12.jar to MobGrindingUtils-0.3.13.jar):
+		MobGrindingUtils-0.3.13.jar:
+			* Fixed Enchantment Modifiers for Sharpness on for Mob Masher Upgrades.
+
+			* Removed some legacy/unused code in Fan and Mob Mashers
+
+			* Changed code activation methods on Mob Masher for state changes and TE setting (under the hood).
+
+	NuclearCraft (went from NuclearCraft-2.12h--1.12.2 to NuclearCraft-2.13e--1.12.2):
+		NuclearCraft-2.13e--1.12.2:
+			* Fixed MSRs not producing hot coolant
+			* Improved multiblock responsiveness to redstone signal updates
+
+			* Further improved machine updating tick time
+			* Fixed some machines trying to start running without power, leading to laggy flickering
+			* Fixed machines occasionally not respecting the stack size limit after being refreshed
+
+			* Fission ports can now accept a redstone signal to activate the reactor
+			* Somewhat reduced the lag caused by meltdowns
+
+			* Fixed input/output of fluid into a fusion core by hand not updating the processing state
+		NuclearCraft-2.13d--1.12.2:
+			* Reinstated missing alugentum melting recipe
+		NuclearCraft-2.13c--1.12.2:
+			* Fixed various recipes null-pointering with certain mods installed
+		NuclearCraft-2.13b--1.12.2:
+			* Fixed very fast machines not respecting the stack size limit
+			* Fixed some alloy melting and ingot forming recipes not being added correctly
+
+			* Refactored fluid initialising to be a little more robust to errors
+			* Improved various class-checking methods to be less laggy [thanks to Funwayguy!]
+
+			* Fixed potential crash on player radiation updating being interrupted
+		NuclearCraft-2.13a--1.12.2:
+			* Fixed Turbines not forming in various circumstances [thanks to Kurtchekov!]
+
+			* Fixed undercooled MSRs producing more useful heat than they should have been
+
+			* Fixed machines getting stuck after temporarily running low on energy
+
+			* Fixed lag on game startup and world load in a few packs
+
+			* Fixed power production not updating in the Fusion Core GUI
+
+			* Added config option for horse armour radiation shielding
+			* Geiger Counter now gets louder in dire situations
+
+			+ Added config option for alternative exhaust steam heat exchanger recipe
+
+			* Various fluids now have light levels
+
+			* Now using CurseForge maven for various dependencies
+		NuclearCraft-2.13--1.12.2:
+			+ Added Turbines [entirely functional, but the rotor rendering and GUI is still a bit WIP!]
+
+			* Fixed MSR Heaters' placement rules occasionally not being checked correctly
+			* Fixed Vessels/Heaters/Tubes having their sidedness modified simultaneously if it had originally been copied along the line
+			* Modified Vessel/Heater/Tube tank capacities to allow for larger fluid throughputs
+
+			* Slowed down energy and fluid pushing rates to the pre-2.12k rate
+			* Fixed energy generators not pushing energy at the correct rate
+
+			* Fixed integration with various Mek gases
+			* Fixed invalid recipes sometimes appearing in JEI
+
+			+ Added RadAway and Rad-X cooldown messages
+			* Increased Hazmat Suit protection level
+			* Fixed player rads resetting on leaving the End
+			* Fixed RadAway recipe being unavailable
+			* Allowed for the removal of radiation levels from otherwise defaultly radioactive materials
+
+			- Totally removed fuel rods
+
+			* Improved TiC alloying ratios
+
+			* Updated Russian language file [thanks to Lokuster!]
+
+			* Many other minor additions and changes
+			- Removed Paulobrine and Herobrian
+		NuclearCraft-2.12k--1.12.2:
+			* Fixed Fission Reactor process time not updating correctly
+			* Fixed certain recipes not starting until re-opening the GUI
+
+			* Fixed crash with the ME Capability Adapter
+		NuclearCraft-2.12j--1.12.2:
+			+ Added thorium, uranium, magnesium and chocolate as TiC materials
+			+ Added Construct's Armory support for all added TiC materials
+
+			* Horse armour can now be given radiation resistance
+			* Fixed radiation tooltip info not showing on servers when connecting with radiation disabled
+
+			* Fixed multiblock error highlighter not showing for players on servers
+
+			* Fixed cobblestone generator tooltip not showing power required if enabled in the configs
+
+			* Minor recipe tweaks and material additions
+		NuclearCraft-2.12i--1.12.2:
+			+ Added Geiger Counter block with OC support
+			+ Added OC support for Radiation Scrubbers
+
+			* Scrubbers no longer remove radiation at a fixed rate
+			* Improved scrubber rad removal rate updating
+
+			+ Added short-lived radiation immunity on death from a fatal dose of radiation
+
+			* Fission Ports and Fusion Cores now correctly refresh the multiblock on opening their GUI
+			* Fission Reactors now generate much less radiation
+			* Fixed Fusion Core GUI not updating correctly
+			* Fixed various multiblock errors being unlocalised
+
+			* Massively reduced lag from Cobblestone Generators and other item-pushing machines
+			* Fixed crash when trying to pass GTCE EU from weak energy sources
+
+			* Reduced lag from recipes and tooltips involving searching through Ore Dict entries
+
+			* Fixed lack of correct blending of Energy Upgrade slot ghost
+
+			* Added and changed many Advancements
+			* Minor recipe tweaks
+
+	ProjectE (went from ProjectE-1.12-PE1.3.2h.jar to ProjectE-1.12.2-PE1.4.0.jar):
+		ProjectE-1.12.2-PE1.4.0.jar:
+			###Version 1.12.2-PE1.4.0
+			* NOTICE: When reporting issues on the tracker please be sure to tag them as 1.12
+			* NEW: Blacklist for blocks that should not be affected by the Watch of Flowing time
+			* NEW: Tab completion support for clearKnowledge and showBag commands
+			* NEW: CraftTweaker support for the Philosophers Stones entity changing abilities as well as world transmutation
+			* NEW: Klein Stars will now function in the offhand slot but this is not required
+			* FIXED: Red Matter Pick rendering issue
+			* FIXED: Gem Chest explosion ability
+			* FIXED: Crash when playing without JEI and other JEI issues
+			* FIXED: Minor quirks with Evertide and Volcanite speed boosts
+			* FIXED: Philosophers Stone returns items when its crafting GUI is closed
+			* FIXED: A freeze if EMC calculation went past the max Long value
+			* FIXED: The API now gives access to sell values
+
+	Quark (went from Quark-r1.5-137.jar to Quark-r1.5-145.jar):
+		Quark-r1.5-145.jar:
+			- General: Disabled Chisel integration temporarily because it's not working properly.
+			- Building: Fixed Duskbound Slabs not being in the creative inventory.
+			- Oddities: Added some safeguards to prevent the matrix enchanter from locking itself in an unusable state.
+			- Oddities: Creative Mode players can now break the Totem of Holding regardless if the config that only allows the owner to break it is toggled.
+			- Oddities: Fixed the Soul Compass recipe being added even if the Soul Compass is disabled, thus crashing.
+			- Oddities: Fixed the Totem of Holding forgetting who its owner is if its chunk is unloaded.
+			- Oddities: Made pre-placed enchanting tables convert to matrix enchanters automatically (rather than crashing the game when right clicked).
+			- Vanity: Fiddled around a bit more to hopefully prevent emote animations leaking to other players again.
+		Quark-r1.5-144.jar:
+			- Vanity: Attempt to fix the build 141 crash again.
+		Quark-r1.5-143.jar:
+			- Vanity: Attempted to fix the crash caused by 141 again.
+		Quark-r1.5-142.jar:
+			- Client: Fixed a crash with the food tooltip and Cooking for Blockheads.
+
+			- Vanity: Fixed a crash with the emote fixes from the last update.
+		Quark-r1.5-141.jar:
+			- General: Moved all the ore dictionary registrations a bit further into the init chain so that CraftTweaker can pick up on them.
+
+			- Experimental: Added new movement types to collateral piston movement: sides, horizontals, verticals.
+
+			- Experimental: Fixed a bunch of weird edge cases with collateral piston movement.
+
+			- Misc: Tried to fix the crash with Spawn Preventing Beacon again.
+
+			- Oddities: Fixed a crash when clicking on the Matrix Enchanter with a lock from the Skillable mod.
+
+			- Vanity: Messed around with the code for the emote system a bunch to hopefully make it not bug out as much.
+		Quark-r1.5-140.jar:
+			- Decoration: Candles now give enchanting power equal to half a bookshelf.
+			- Experimental: Added Collateral Piston Movement. Doesn't do anything by default, but you can customize it to make some blocks move things along with them when moved with a piston.
+			- Misc: Fixed a crash with the Spawn Preventing Beacon mod.
+			- Oddities: Added Matrix Enchanting, an overhaul of the enchanting system using pieces and a grid, inspired by the NaviCust in Megaman Battle Network. [Check it out here](https://twitter.com/Vazkii/status/1083572148793499649).
+		Quark-r1.5-139.jar:
+			- Client: Made black animals less black so that you can actually see them.
+			- Management: Fixed a dupe with dropoff buttons and StackUp
+			- Management: Tried to fix duplicated trash buttons in Tinkers' Construct GUIs. Maybe it works idk, lemme know.
+			- Oddities: Fixed backpacks falling on the floor and creating visual dupes if you unequip them without shift clicking.
+		Quark-r1.5-138.jar:
+			- Management: Fixed a crash with sponge when linking an item.
+			- Management: Fixed the trash button ending up in the corner in Tinkers' Construct GUIs. (mezz)
+			- Management: JEI will now try and avoid the trash button. (mezz)
+			- Misc: Added the Elytra duplication recipe to JEI: (mezz)
+			- Oddities: Fixed backpacks being able to take damage.
+
+	RFTools (went from RFTools - 1.12-7.59 to RFTools - 1.12-7.60):
+		RFTools - 1.12-7.60:
+			 - Needs McJtyLib 3.1.0
+			 - Support for COFH RF API is removed. Only Forge Energy is supported now
+			 - Joseph further reduced screens' network traffic
+			 - Joseph made shield blocks no longer be ticking tile entities, even if they do damage
+			 - Joseph fixed the Spawner not working properly with items from other mods
+			 - Some cleanups
+			 - TheMuso added OpenComputers support for the crafter
+			 - John Doe added support for shift-click to replace crafter input ghost items
+
+	RFTools Dimensions (went from RFToolsDimensions - 1.12-5.63 to RFToolsDimensions - 1.12-5.64):
+		RFToolsDimensions - 1.12-5.64:
+			 - Needs McJtyLib 3.1.0
+			 - Support for COFH RF API is removed. Only Forge Energy is supported now
+
+	RFTools Power (went from RFToolsPower - 1.12-1.1.1 to RFToolsPower - 1.12-1.1.2):
+		RFToolsPower - 1.12-1.1.2:
+			 - Needs McJtyLib 3.1.0
+			 - Support for COFH RF API is removed. Only Forge Energy is supported now
+			 - Various cleanups
+
+	Reborn Core (went from RebornCore-1.12.2-3.12.1.385-universal.jar to RebornCore-1.12.2-3.13.3.416-universal.jar):
+		RebornCore-1.12.2-3.13.3.416-universal.jar:
+			(modmuss50) #releaseBuild
+			(github) Update README.md
+			(github) Add mod requirements
+			(modmuss50) Add maxPacketsPerTick option (#103)
+			(github) Update README.md
+		RebornCore-1.12.2-3.13.2.411-universal.jar:
+			(modmuss50) #releaseBuild
+			(drcrazy) MOre work on tips
+			(modmuss50) Add basicDrawScreen
+			(modmuss50) Missed a spot
+			(modmuss50) Limit slot and fluid configs to TileLegacyMachineBase and ensure there is a built container for those.
+			(drcrazy) Bumped forge to 14.23.5.2796 + fixed couple of warnings
+			(drcrazy) Updated power output icon.
+		RebornCore-1.12.2-3.13.1.402-universal.jar:
+			(modmuss50) #releaseBuild
+			(drcrazy) Fixes to support QS
+		RebornCore-1.12.2-3.13.0.400-universal.jar:
+			(modmuss50) #releaseBuild
+			(modmuss50) Check for common sided markers on classes when checking to see if they are valid for loading, Fixes #102
+			(drcrazy) Removed unused import
+			(drcrazy) Right to left progress arrow fixed.
+			(drcrazy) Moved remaining methods from TR builder to RC.
+			(modmuss50) Make ExternalPowerSystems use EntityLivingBase and allow FE support on items to be disabled (#100)
+			(modmuss50) Change EntityPlayer to EntityLivingBase in chargeFromArmor (#99)
+			(modmuss50) Add implementations in ExternalPowerSystems for chargeItem and requestEnergyFromArmor (#98)
+			(modmuss50) Completely move FE support to an ExternalPowerManager, removing the special case (#97)
+			(drcrazy) Tooltips for slots and upgrades refactored
+			(drcrazy) Tooltip for upgrades fixed. Closes TechReborn/TechReborn#1641
+			(modmuss50) Create de_de.lang (#96)
+			(modmuss50) Make FE support in TIlePowerAcceptor a ForgePowerHandler (#95)
+			(drcrazy) Text from AESU powerOutput back to proper place
+			(drcrazy) Energy output moved from TR to RC GUI builder
+
+	Refined Exchange (went from refinedexchange-2.0.3.jar to refinedexchange-2.1.1.jar):
+		refinedexchange-2.1.1.jar:
+			MAKE SURE TO BE USING REFINED STORAGE 1.6.12+ and PROJECTE 1.3.1+ (1.3.2/h crashes by itself though)
+
+			 2.1.1
+
+			Fixed crash with emc crafter
+
+			2.1.0
+
+			Fixed crashes, but had to reduce the EMC Crafter to one slot as a result...
+
+			Power consumption on the EMC Crafter reduced
+
+			2.0.3
+
+			Fixed NBT dupe bug
+
+			Changed the text in the liquifier to be darker
+
+			2.0.2
+
+			Fixed the server crash
+
+			2.0.1
+
+			Fixed recipes for the emc crafter and liquifier not working
+
+			2.0.0
+
+			Rewritten for Refined Storage 1.6, ProjectE 1.3 and MC 1.12.2
+
+			Uses the EMC Liquifier to turn items into Liquified EMC that is used to craft new items in the EMC Crafter
+		refinedexchange-2.1.0.jar:
+			MAKE SURE TO BE USING REFINED STORAGE 1.6.12+ and PROJECTE 1.3.1+ (1.3.2/h crashes by itself though)
+
+			2.1.0
+
+			Fixed crashes, but had to reduce the EMC Crafter to one slot as a result...
+
+			Power consumption on the EMC Crafter reduced
+
+			2.0.3
+
+			Fixed NBT dupe bug
+
+			Changed the text in the liquifier to be darker
+
+			2.0.2
+
+			Fixed the server crash
+
+			2.0.1
+
+			Fixed recipes for the emc crafter and liquifier not working
+
+			2.0.0
+
+			Rewritten for Refined Storage 1.6, ProjectE 1.3 and MC 1.12.2
+
+			Uses the EMC Liquifier to turn items into Liquified EMC that is used to craft new items in the EMC Crafter
+
+	ShetiPhianCore (went from shetiphiancore-1.12.0-3.5.8.jar to shetiphiancore-1.12.0-3.5.9.jar):
+		shetiphiancore-1.12.0-3.5.9.jar:
+			- Fixed formatting error on OneProbe tooltip for colorable blocks
+
+			- Added helper functions for Comparator output calculations
+
+	The One Probe (went from TheOneProbe - 1.12-1.4.25 to TheOneProbe - 1.12-1.4.28):
+		TheOneProbe - 1.12-1.4.28:
+			 - Small api method to allow getting the default config
+		TheOneProbe - 1.12-1.4.27:
+			 - Joseph made growth show up for any block with an integer property named "age".
+
+	Tinkers Construct (went from TConstruct-1.12.2-2.11.0.106.jar to TConstruct-1.12.2-2.12.0.115.jar):
+		TConstruct-1.12.2-2.12.0.115.jar:
+			The last release introduced a bug that made the Tinker Tank unusable. Now it can be used again!
+		TConstruct-1.12.2-2.12.0.113.jar:
+			Added several checks to alloy recipes, to prevent startup if there are recipes that don't make sense and might break the game/crash. Things like vanishing fluids and/or crashes when certain liquids are in the smeltery should no longer happen with this, BUT it might be that existing mods might not start anymore, if they add broken recipes!
+
+			 *
+			Tanks/Gauges/Windows now show their contained fluid in item form again!
+
+			 *
+			Illagers now also melt into emeralds
+
+			 *
+			Display no fuel in Smeltery JEI recipe if there exists no fuel that can melt the block/item
+
+			 *
+			Several TiC furnace recipes now give XP! Like.. grout!
+
+			 *
+			Add a (very) short cooldown to rapier backpedal
+
+			 *
+			Use white glass background for clear item frame, since it's invisible with some texture packs
+
+			 *
+			Congealed slime blocks now only keep you bouncing if you land on them with a minimum speed, to prevend jittering when standing/walking on them
+
+			 *
+			Fix a weird smeltery bug where items that can't melt mess with fuel consumption or provide infinite fuel
+
+			 *
+			Add a few checks to advancements, to prevent potential crashes and/or unnecessary lag
+
+			 *
+			Fixed invalid smeltery configuration that would allow to have a smeltery controller on the floor level, which could couse crashes
+
+			 *
+			Fixes an issue where fluids are non-default then get switched to default on world load, but never had their texture loaded. You typically did not notice it with Tinkers fluids since we have so many that one is almost gaurenteed to be default, but better to be on the safe side
+
+			 *
+			Updated german localization
+
+	Tiny Progressions (went from tinyprogressions-1.12.2-3.3.31-Release.jar to Tiny Progressions v3.3.32 (1.12.2)):
+		Tiny Progressions v3.3.32 (1.12.2):
+			# 3.3.32
+
+			 * Dupe Bug Squashed..
+			 * Fixed Typo's & Localization changes
+			 * Fixed recipe with tier 3 growth crystal
+			 * Oredic on recipe for infinity bucket with steel
+			 * Fixed crash with Wub hammer (hopefully)
+			 * and lots of behind the scenes things...
+			# 3.3.31
+
+			 * small update.
+			 * added Iron Furnace.
+			 * added nether lava block.
+			Be sure to back up configs before updating.
+
+	ValkyrieLib (went from valkyrielib-1.12.2-2.0.18.3.jar to valkyrielib-1.12.2-2.0.19.1.jar):
+		valkyrielib-1.12.2-2.0.19.1.jar:
+			No changelog provided.
+
+* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.12.2)
