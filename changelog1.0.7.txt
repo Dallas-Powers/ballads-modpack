@@ -345,6 +345,59 @@ Updated:
 		FTBLib-5.4.1.81.jar:
 			 * Fixed special drop blocks - LatvianModder
 
+	FTB Utilities (went from FTBUtilities-5.3.0.79.jar to FTBUtilities-5.4.0.92.jar):
+		FTBUtilities-5.4.0.92.jar:
+			 * Reformatted after /back PR - LatvianModder
+			 * Merge pull request #968 from insufficientchocolate/tp_back - Kristi?ns Mic?tis
+			 * move warmup & cooldown permission into TeleportType - insufficientchocolate
+			 * fix TeleportTracker missing comma - insufficientchocolate
+			 * use snake_case nbt key - insufficientchocolate
+			 * wipe all telport logs if doesn't have infinit_back permission - insufficientchocolate
+			 * add default permissions - insufficientchocolate
+			 * implement compareTo of TeleportLog - insufficientchocolate
+			 * add TeleportTracker - insufficientchocolate
+			 * rename TeleportRecord -> TeleportLog - insufficientchocolate
+			 * make TeleportType carry permission node - insufficientchocolate
+			 * add back permission nodes - insufficientchocolate
+			 * replace lastDeath by lastTeleportRecord - insufficientchocolate
+			 * implement back to last teleport location - insufficientchocolate
+			 * move classes to separate files - insufficientchocolate
+			 * record teleport from teleport task - insufficientchocolate
+		FTBUtilities-5.4.0.91.jar:
+			 * Reformatted /ping PR - LatvianModder
+			 * Merge pull request #966 from insufficientchocolate/ping_command - Kristi?ns Mic?tis
+			 * Merge pull request #967 from Naxanria/master - Kristi?ns Mic?tis
+			 * RTP command improvements. - Naxanria
+			 * implement server pinger - insufficientchocolate
+			 * add ping commnad - insufficientchocolate
+			 * Updated progwml6 maven url to https - LatvianModder
+		FTBUtilities-5.4.0.90.jar:
+			 * In /dump_chunkloaders clicking on Chunks now teleports to center of them - LatvianModder
+		FTBUtilities-5.4.0.89.jar:
+			 * Added /dump_chunkloaders - LatvianModder
+		FTBUtilities-5.4.0.88.jar:
+			 * Updated guide link in ranks.txt - LatvianModder
+		FTBUtilities-5.4.0.87.jar:
+			 * Added timer in corner config - LatvianModder
+		FTBUtilities-5.4.0.86.jar:
+			 * Fixed being stupid and forgetting to add backups to buildscript - LatvianModder
+		FTBUtilities-5.4.0.85.jar:
+			 * Added option to disable suffocation damage, closes #484 - LatvianModder
+			 * Added keybinding for trash can - LatvianModder
+		FTBUtilities-5.4.0.84.jar:
+			No changelog provided.
+		FTBUtilities-5.3.0.83.jar:
+			 * Fixed NBT editor issues - LatvianModder
+			 * Removed backups from FTB Utilities, moved to [FTB Utilities: Backups](https://minecraft.curseforge.com/projects/ftb-utilities-backups) mod - LatvianModder
+			 * Removed /inv save and /inv load - LatvianModder
+		FTBUtilities-5.3.0.82.jar:
+			 * Added custom Tab text, /rec command. Shows [REC] if player has enabled recording mode, shows [AFK] if player is afk - LatvianModder
+			 * Added default /killall to ignore non-living entities that arent items - LatvianModder
+		FTBUtilities-5.3.0.81.jar:
+			 * Added Jumps leaderboard - LatvianModder
+		FTBUtilities-5.3.0.80.jar:
+			 * Added options to force time and weather in spawn dimension - LatvianModder
+
 	FoamFix for Minecraft (went from FoamFix 0.10.3 (1.12.2) to FoamFix 0.10.5 (1.12.2)):
 		FoamFix 0.10.5 (1.12.2):
 			0.10.5 is a critical bugfix release for 0.10.4, whose changelog is as follows:
@@ -791,8 +844,3 @@ Updated:
 			 * EntityLatchedRenderer should be a lot strict on spawning now. Config added to disable them spawning entirely if lag is found on clients.
 			 * Fix for Morph crashing when trying to get hurt/death sounds and set size on weird entities.
 			 * Updated EULA to remove lines suggesting that iChunUtil collects user information (because it doesn't). Add CurseForge as an official resource for the mod.
-
-Removed:
-	- FTB Utilities
-
-* Generated using https://github.com/TheRandomLabs/ChangelogGenerator (1.13)
